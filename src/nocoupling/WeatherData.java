@@ -11,7 +11,7 @@ public class WeatherData {
     }
 
     public void onMeasurementsChanged() {
-        ObserverManager.get().publishToTopic("weather");
+        WeatherSubject.get().publishToTopic();
     }
 
     public double getTemperature() {
