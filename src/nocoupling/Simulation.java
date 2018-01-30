@@ -11,11 +11,11 @@ public class Simulation {
     }
 
     public void hurricane() {
-        cnn.breakingNews();
+        cnn.breakingNews("There is a hurricane");
     }
 
     public void carCrash() {
-        nyTimes.writeArticle();
+        nyTimes.writeArticle("There was a car crash");
     }
 
 }

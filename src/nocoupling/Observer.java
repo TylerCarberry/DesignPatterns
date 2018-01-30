@@ -1,5 +1,5 @@
 package nocoupling;
 
-public interface Observer {
-    void update();
+public interface Observer<K> {
+    void update(K value);
 }

@@ -6,10 +6,10 @@ public class Main {
         Simulation simulation = new Simulation();
         simulation.hurricane();
 
-        Observer newsObserver1 = new Observer() {
+        Observer<News> newsObserver1 = new Observer<News>() {
             @Override
-            public void update() {
-                System.out.println("Observer with anonymous class");
+            public void update(News value) {
+                System.out.println("Breaking news: " + value.getHeadline());
             }
         };
 
@@ -17,7 +17,7 @@ public class Main {
 
         simulation.hurricane();
 
-        NewsSubject.get().subscribeToTopic(() -> System.out.println("Observer with lambda"));
+        NewsSubject.get().subscribeToTopic((News news) -> System.out.println("News alert: " + news.getHeadline()));
         simulation.hurricane();
         simulation.carCrash();
     }

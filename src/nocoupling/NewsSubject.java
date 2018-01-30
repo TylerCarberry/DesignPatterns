@@ -1,14 +1,14 @@
 package nocoupling;
 
-public class NewsSubject extends Subject {
+public class NewsSubject extends Subject<News> {
 
-    private static Subject INSTANCE;
+    private static NewsSubject INSTANCE;
 
     private NewsSubject() {
         super();
     }
 
-    public static Subject get() {
+    public static NewsSubject get() {
         if (INSTANCE == null) {
             INSTANCE = new NewsSubject();
         }
