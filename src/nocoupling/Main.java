@@ -4,17 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         Simulation simulation = new Simulation();
-        simulation.sun();
+        simulation.hurricane();
 
-        WeatherSubject.get().subscribeToTopic(() -> System.out.println("Observer 1"));
+        NewsSubject.get().subscribeToTopic(() -> System.out.println("Observer 1"));
 
-        simulation.rain();
+        simulation.hurricane();
 
-        WeatherSubject.get().subscribeToTopic(() -> System.out.println("Observer 2"));
-        simulation.sun();
-        simulation.rain();
-
-        // Should do nothing since it is already raining
-        simulation.rain();
+        NewsSubject.get().subscribeToTopic(() -> System.out.println("Observer 2"));
+        simulation.hurricane();
+        simulation.carCrash();
     }
 }

@@ -2,18 +2,20 @@ package nocoupling;
 
 public class Simulation {
 
-    private WeatherData weatherData;
+    private CNN cnn;
+    private NYTimes nyTimes;
 
     public Simulation() {
-        weatherData = new WeatherData();
+        cnn = new CNN();
+        nyTimes = new NYTimes();
     }
 
-    public void rain() {
-        weatherData.setHumidity(90);
+    public void hurricane() {
+        cnn.breakingNews();
     }
 
-    public void sun() {
-        weatherData.setHumidity(10);
+    public void carCrash() {
+        nyTimes.writeArticle();
     }
 
 }

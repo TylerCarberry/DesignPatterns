@@ -1,16 +1,16 @@
 package nocoupling;
 
-public class WeatherSubject extends Subject {
+public class NewsSubject extends Subject {
 
     private static Subject INSTANCE;
 
-    private WeatherSubject() {
+    private NewsSubject() {
         super();
     }
 
     public static Subject get() {
         if (INSTANCE == null) {
-            INSTANCE = new WeatherSubject();
+            INSTANCE = new NewsSubject();
         }
         return INSTANCE;
     }
