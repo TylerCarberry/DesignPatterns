@@ -2,7 +2,7 @@ package nocoupling;
 
 public class NewsSubject extends Subject<News> {
 
-    private static NewsSubject INSTANCE;
+    private static volatile NewsSubject INSTANCE;
 
     private NewsSubject() {
         super();
@@ -10,7 +10,11 @@ public class NewsSubject extends Subject<News> {
 
     public static NewsSubject get() {
         if (INSTANCE == null) {
-            INSTANCE = new NewsSubject();
+            synchronized (NewsSubject.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new NewsSubject();
+                }
+            }
         }
         return INSTANCE;
     }
