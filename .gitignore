@@ -50,3 +50,7 @@ crashlytics-build.properties
 fabric.properties
 
 .DS_STORE
+
+.gradle
+
+/build

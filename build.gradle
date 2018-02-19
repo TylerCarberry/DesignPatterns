@@ -1,0 +1,51 @@
+apply plugin: "java"
+apply plugin: "net.ltgt.apt"
+apply plugin: 'idea'
+
+version = '1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+dependencies {
+    compile (
+            'com.google.code.gson:gson:2.3.1',
+            'com.googlecode.json-simple:json-simple:1.1'
+    )
+
+    compile 'com.google.dagger:dagger:2.13'
+    apt 'com.google.dagger:dagger-compiler:2.13'
+
+    compile 'com.google.guava:guava:23.0'
+
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.4.0'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
+}
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.4"
+    }
+}
