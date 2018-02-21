@@ -7,7 +7,7 @@ public class Tester {
   @Inject UserSettings userSettings;
 
   public Tester() {
-    DaggerAppComponent.builder().build().inject(this);
+    DaggerAppComponent.create().inject(this);
   }
 
   public void printHello() {
