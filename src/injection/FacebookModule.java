@@ -6,7 +6,7 @@ import dagger.Provides;
 import javax.inject.Singleton;
 
 @Module
-public class NetworkModule {
+public class FacebookModule {
 
   @Provides
   @Singleton

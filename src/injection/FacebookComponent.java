@@ -5,7 +5,7 @@ import dagger.Component;
 import javax.inject.Singleton;
 
 @Singleton
-@Component(modules ={NetworkModule.class})
-public interface AppComponent {
+@Component(modules ={FacebookModule.class})
+public interface FacebookComponent {
   void inject(Tester tester);
 }
