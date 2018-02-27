@@ -8,15 +8,7 @@ public class NetworkCache {
         this.cacheFile = cacheFile;
     }
 
-    public Cache getCacheFile() {
-        return cacheFile;
-    }
-
-    public void setCacheFile(Cache cacheFile) {
-        this.cacheFile = cacheFile;
-    }
-
     public void create() {
-        System.out.println("Creating cache");
+        System.out.println("Creating cache, contents of cache: " + cacheFile.getContents());
     }
 }

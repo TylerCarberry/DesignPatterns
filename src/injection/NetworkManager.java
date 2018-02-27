@@ -10,24 +10,8 @@ public class NetworkManager {
         this.networkCache = networkCache;
     }
 
-    public WifiManager getWifiManager() {
-        return wifiManager;
-    }
-
-    public void setWifiManager(WifiManager wifiManager) {
-        this.wifiManager = wifiManager;
-    }
-
-    public NetworkCache getNetworkCache() {
-        return networkCache;
-    }
-
-    public void setNetworkCache(NetworkCache networkCache) {
-        this.networkCache = networkCache;
-    }
-
     public void connect() {
-        wifiManager.isClearpassWorking();
+        System.out.println("Is clearpass working? " + wifiManager.isClearpassWorking());
         networkCache.create();
     }
 }

@@ -6,19 +6,15 @@ import javax.inject.Inject;
 
 public class Tester {
 
-  @Inject UserSettings userSettings;
+  @Inject FacebookApi facebookApi;
 
   public Tester() {
     DaggerFacebookComponent.create().inject(this);
   }
 
   public void printHello() {
-    if (userSettings.getLanguage().equals("English")) {
-      System.out.println("Hello");
-    } else {
-      System.out.println("Hola");
-    }
+    facebookApi.postOnFacebook("Having a great time in OOD!");
+    facebookApi.postImage("https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg");
   }
-
 
 }
