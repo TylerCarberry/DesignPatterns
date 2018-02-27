@@ -8,7 +8,7 @@ public class Main {
     Tester tester = new Tester();
 
     tester.printHello();
-
+    new TestingMockito();
 
     // Facebook API client has a
     // • Network manager
