@@ -1,5 +1,7 @@
 package injection;
 
+import injection.dagger.DaggerFacebookComponent;
+
 import javax.inject.Inject;
 
 public class Tester {
