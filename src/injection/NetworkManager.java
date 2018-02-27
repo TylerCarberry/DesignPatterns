@@ -25,4 +25,9 @@ public class NetworkManager {
     public void setNetworkCache(NetworkCache networkCache) {
         this.networkCache = networkCache;
     }
+
+    public void connect() {
+        wifiManager.isClearpassWorking();
+        networkCache.create();
+    }
 }

@@ -15,4 +15,8 @@ public class ImageResizer {
     public void setCacheFile(Cache cacheFile) {
         this.cacheFile = cacheFile;
     }
+
+    public void resize() {
+        System.out.println("Resizing image");
+    }
 }

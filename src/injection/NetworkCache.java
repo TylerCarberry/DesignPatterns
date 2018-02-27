@@ -15,4 +15,8 @@ public class NetworkCache {
     public void setCacheFile(Cache cacheFile) {
         this.cacheFile = cacheFile;
     }
+
+    public void create() {
+        System.out.println("Creating cache");
+    }
 }

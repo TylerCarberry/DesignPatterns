@@ -1,7 +1,9 @@
-package injection;
+package injection.dagger;
 
 import dagger.Module;
 import dagger.Provides;
+import injection.UserSettings;
+
 import javax.inject.Singleton;
 
 @Module

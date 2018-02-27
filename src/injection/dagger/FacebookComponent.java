@@ -1,6 +1,7 @@
-package injection;
+package injection.dagger;
 
 import dagger.Component;
+import injection.Tester;
 
 import javax.inject.Singleton;
 
