@@ -4,11 +4,12 @@ public class Main {
 
   public static void main(String[] args) {
     System.out.println("STARTING PROGRAM");
-
+    //runs just general test without mockito
     Tester tester = new Tester();
-
     tester.printHello();
-    new TestingMockito();
+
+    //runs tests with mockito for facebook api and all component
+    new TestsWithMockito();
 
     // Facebook API client has a
     // • Network manager

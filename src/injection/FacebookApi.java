@@ -18,12 +18,14 @@ public class FacebookApi {
         if (userSettings.getLanguage().equalsIgnoreCase("English")) {
             System.out.println(message);
         } else {
-            System.out.println("Hola!");
+            System.out.println("language is = " +userSettings.getLanguage());
+            System.out.println(message);
+
         }
     }
 
     public void postImage(String imageUrl) {
         imageResizer.resize();
-        System.out.println("Posted image");
+        System.out.println("Posted image: " + imageUrl);
     }
 }
