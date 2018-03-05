@@ -7,9 +7,9 @@ public class Main {
     //runs just general test without mockito
     Tester tester = new Tester();
     tester.printHello();
-
     //runs tests with mockito for facebook api and all component
     new TestsWithMockito();
+
 
     // Facebook API client has a
     // • Network manager
