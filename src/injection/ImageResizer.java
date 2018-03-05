@@ -9,6 +9,6 @@ public class ImageResizer {
     }
 
     public void resize() {
-        System.out.println("Resizing image");
+        System.out.println("Resizing image" );
     }
 }
