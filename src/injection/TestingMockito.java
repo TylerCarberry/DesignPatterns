@@ -7,9 +7,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by johnathansaunders on 2/26/18.
- */
 public class TestingMockito {
 
     // mock creation

@@ -1,24 +1,44 @@
 package injection;
 
+import javax.inject.*;
+import injection.dagger.*;
 import org.mockito.Mockito;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by johnathansaunders on 3/5/18.
- */
 public class TestsWithMockito {
-    FacebookApi facebookApi = mock(FacebookApi.class);
-    NetworkManager networkManager = mock(NetworkManager.class);
-    ImageResizer imageResizer = mock(ImageResizer.class);
-    NetworkCache networkCache = mock(NetworkCache.class);
-    UserSettings userSettings = mock(UserSettings.class);
-    WifiManager wifiManager = mock(WifiManager.class);
-    Cache cache = mock(Cache.class);
-    TestsWithMockito(){
-        print("================ Running Mockito TestsWithMockito for FacebookApi =============");
+//    FacebookApi facebookApi = mock(FacebookApi.class);
+//    NetworkManager networkManager = mock(NetworkManager.class);
+//    ImageResizer imageResizer = mock(ImageResizer.class);
+//    NetworkCache networkCache = mock(NetworkCache.class);
+//    UserSettings userSettings = mock(UserSettings.class);
+//    WifiManager wifiManager = mock(WifiManager.class);
+//    Cache cache = mock(Cache.class);
 
+    @Inject FacebookApi facebookApi;
+    @Inject NetworkManager networkManager;
+    @Inject ImageResizer imageResizer;
+    @Inject NetworkCache networkCache;
+    @Inject UserSettings userSettings;
+    @Inject WifiManager wifiManager;
+    @Inject Cache cache;
+
+
+//    public TestsWithMockito(FacebookApi facebookApi,NetworkManager networkManager,ImageResizer imageResizer,
+//                            NetworkCache networkCache,UserSettings userSettings,WifiManager wifiManager,Cache cache){
+    public TestsWithMockito() {
+//        this.facebookApi = facebookApi;
+//        this.networkManager = networkManager;
+//        this.imageResizer = imageResizer;
+//        this.networkCache = networkCache;
+//        this.userSettings = userSettings;
+//        this.wifiManager = wifiManager;
+//        this.cache = cache;
+
+        DaggerTestFacebookComponent.builder().build().inject(this);
+
+        print("\n================ Running Mockito TestsWithMockito for FacebookApi =============");
         testUserSettings();
         testWifiManager();
         testCache();
@@ -29,45 +49,45 @@ public class TestsWithMockito {
     }
 
     void testUserSettings(){
-        print("==== Testing UserSettings===");
-        when(userSettings.getLanguage()).thenReturn("French");
-        Mockito.doReturn("AlarmNotification").when(userSettings).configureAlarmNotificationLevel(Mockito.any(UserSettings.AlarmConfigLevel.class));
+        print("\n==== Testing UserSettings===");
+//        when(userSettings.getLanguage()).thenReturn("French");
+//        Mockito.doReturn("AlarmNotification").when(userSettings).configureAlarmNotificationLevel(Mockito.any(UserSettings.AlarmConfigLevel.class));
         print(userSettings.configureAlarmNotificationLevel(UserSettings.AlarmConfigLevel.NONE));
         print(userSettings.getLanguage());
     }
 
     void testWifiManager(){
-        print("==== Testing WifiManager===");
-        when(wifiManager.getConnectionInfo()).thenReturn("cnt-info-1234");
-        when(wifiManager.isClearpassWorking()).thenReturn(true);
+        print("\n==== Testing WifiManager===");
+//        when(wifiManager.getConnectionInfo()).thenReturn("cnt-info-1234");
+//        when(wifiManager.isClearpassWorking()).thenReturn(true);
         print(wifiManager.getConnectionInfo());
         print(String.valueOf(wifiManager.isClearpassWorking()));
     }
     void testCache(){
-        print("==== Testing Cache===");
-        when((cache).empty()).thenReturn("Never empty");
-        when((cache).getContents()).thenReturn("got cached contents woo");
+        print("\n==== Testing Cache===");
+//        when((cache).empty()).thenReturn("Never empty");
+//        when((cache).getContents()).thenReturn("got cached contents woo");
         print(cache.empty());
         print(cache.getContents());
     }
     void testImageResizer(){
-        print("==== Testing ImageResizer===");
+        print("\n==== Testing ImageResizer===");
         imageResizer = new ImageResizer(cache);
         imageResizer.resize();
     }
     void testNetworkCache(){
-        print("==== Testing NetworkCache===");
+        print("\n==== Testing NetworkCache===");
          networkCache = new NetworkCache(cache);
          networkCache.create();
     }
     void testNetworkManager(){
-        print("==== Testing NetworkManager===");
+        print("\n==== Testing NetworkManager===");
         networkManager = new NetworkManager(wifiManager,networkCache);
         networkManager.connect();
     }
 
     void testFacebookApi(){
-        print("==== Testing FacebookApi===");
+        print("\n==== Testing FacebookApi===");
         facebookApi = new FacebookApi( networkManager,  imageResizer,  userSettings);
         facebookApi.postImage("test post");
         facebookApi.postOnFacebook("my test message");
