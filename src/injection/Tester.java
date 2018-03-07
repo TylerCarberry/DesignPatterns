@@ -14,7 +14,8 @@ public class Tester {
 
   public void printHello() {
     facebookApi.postOnFacebook("Having a great time in OOD!");
-    facebookApi.postImage("https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg");
+//    facebookApi.postImage("https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg");
+    facebookApi.postRandomCat();
   }
 
 }

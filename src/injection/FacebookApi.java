@@ -28,4 +28,9 @@ public class FacebookApi {
         imageResizer.resize();
         System.out.println("Posted image: " + imageUrl);
     }
+
+    public void postRandomCat() {
+        imageResizer.resize();
+        System.out.println("Posted image: http://thecatapi.com/?id=" + (int) Math.floor(Math.random() * 1000));
+    }
 }
