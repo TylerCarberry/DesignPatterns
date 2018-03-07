@@ -28,4 +28,8 @@ public class FacebookApi {
         imageResizer.resize();
         System.out.println("Posted image: " + imageUrl);
     }
+
+    public NetworkManager getNetworkManager() {
+        return networkManager;
+    }
 }

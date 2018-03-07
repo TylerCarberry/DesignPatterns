@@ -5,9 +5,6 @@ import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by johnathansaunders on 3/5/18.
- */
 public class TestsWithMockito {
     FacebookApi facebookApi = mock(FacebookApi.class);
     NetworkManager networkManager = mock(NetworkManager.class);
@@ -43,6 +40,7 @@ public class TestsWithMockito {
         print(wifiManager.getConnectionInfo());
         print(String.valueOf(wifiManager.isClearpassWorking()));
     }
+
     void testCache(){
         print("==== Testing Cache===");
         when((cache).empty()).thenReturn("Never empty");
@@ -50,16 +48,19 @@ public class TestsWithMockito {
         print(cache.empty());
         print(cache.getContents());
     }
+
     void testImageResizer(){
         print("==== Testing ImageResizer===");
         imageResizer = new ImageResizer(cache);
         imageResizer.resize();
     }
+
     void testNetworkCache(){
         print("==== Testing NetworkCache===");
          networkCache = new NetworkCache(cache);
          networkCache.create();
     }
+
     void testNetworkManager(){
         print("==== Testing NetworkManager===");
         networkManager = new NetworkManager(wifiManager,networkCache);

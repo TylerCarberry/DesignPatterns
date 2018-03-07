@@ -7,9 +7,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by johnathansaunders on 2/26/18.
- */
 public class TestingMockito {
 
     // mock creation
@@ -36,7 +33,5 @@ public class TestingMockito {
         // the following prints "null" because get(999) was not stubbed
         System.out.println(mockedList.get(999));
     }
-
-
 
 }

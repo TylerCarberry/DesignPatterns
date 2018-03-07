@@ -2,7 +2,7 @@ package injection;
 
 public class NetworkCache {
 
-    Cache cacheFile;
+    private Cache cacheFile;
 
     public NetworkCache(Cache cacheFile) {
         this.cacheFile = cacheFile;

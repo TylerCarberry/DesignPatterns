@@ -2,8 +2,8 @@ package injection;
 
 public class NetworkManager {
 
-    WifiManager wifiManager;
-    NetworkCache networkCache;
+    private WifiManager wifiManager;
+    private NetworkCache networkCache;
 
     public NetworkManager(WifiManager wifiManager, NetworkCache networkCache) {
         this.wifiManager = wifiManager;
