@@ -3,7 +3,9 @@ package injection.dagger;
 import dagger.Module;
 import dagger.Provides;
 import injection.*;
-
+import org.mockito.Mockito;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import javax.inject.Singleton;
 
 @Module
@@ -12,7 +14,10 @@ public class TestFacebookModule {
     @Provides
     @Singleton
     UserSettings providesUserSettings() {
-        return new UserSettings();
+        UserSettings userSettings = mock(UserSettings.class);
+        when(userSettings.getLanguage()).thenReturn("French");
+        Mockito.doReturn("AlarmNotification").when(userSettings).configureAlarmNotificationLevel(Mockito.any(UserSettings.AlarmConfigLevel.class));
+        return userSettings;
     }
 
     @Provides
@@ -30,7 +35,10 @@ public class TestFacebookModule {
     @Provides
     @Singleton
     WifiManager providesWifiManager() {
-        return new WifiManager();
+        WifiManager wifiManager = mock(WifiManager.class);
+        when(wifiManager.getConnectionInfo()).thenReturn("cnt-info-1234");
+        when(wifiManager.isClearpassWorking()).thenReturn(true);
+        return wifiManager;
     }
 
     @Provides
@@ -42,7 +50,10 @@ public class TestFacebookModule {
     @Provides
     @Singleton
     Cache providesCache() {
-        return new Cache();
+        Cache cache = mock(Cache.class);
+        when((cache).empty()).thenReturn("Never empty");
+        when((cache).getContents()).thenReturn("got cached contents woo");
+        return cache;
     }
 
     @Provides

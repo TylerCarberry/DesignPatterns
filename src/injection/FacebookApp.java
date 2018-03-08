@@ -4,18 +4,21 @@ import injection.dagger.DaggerFacebookComponent;
 
 import javax.inject.Inject;
 
-public class Tester {
+public class FacebookApp {
 
   @Inject FacebookApi facebookApi;
+  @Inject NetworkManager networkManager;
 
-  public Tester() {
+  public FacebookApp() {
     DaggerFacebookComponent.create().inject(this);
   }
 
   public void printHello() {
     facebookApi.postOnFacebook("Having a great time in OOD!");
-//    facebookApi.postImage("https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg");
     facebookApi.postRandomCat();
+
+    // Since network manager is a singleton, they are they same object
+    assert(facebookApi.getNetworkManager() == networkManager);
   }
 
 }

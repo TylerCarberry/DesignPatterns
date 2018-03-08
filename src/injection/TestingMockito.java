@@ -34,6 +34,4 @@ public class TestingMockito {
         System.out.println(mockedList.get(999));
     }
 
-
-
 }

@@ -2,7 +2,7 @@ package injection;
 
 public class ImageResizer {
 
-    Cache cacheFile;
+    private Cache cacheFile;
 
     public ImageResizer(Cache cacheFile) {
         this.cacheFile = cacheFile;

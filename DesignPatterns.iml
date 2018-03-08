@@ -5,6 +5,9 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/build/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/distributions" />
+      <excludeFolder url="file://$MODULE_DIR$/build/kotlin" />
+      <excludeFolder url="file://$MODULE_DIR$/build/kotlin-build" />
       <excludeFolder url="file://$MODULE_DIR$/build/libs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
