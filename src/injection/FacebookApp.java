@@ -15,7 +15,7 @@ public class FacebookApp {
 
   public void printHello() {
     facebookApi.postOnFacebook("Having a great time in OOD!");
-    facebookApi.postImage("https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg");
+    facebookApi.postRandomCat();
 
     // Since network manager is a singleton, they are they same object
     assert(facebookApi.getNetworkManager() == networkManager);
