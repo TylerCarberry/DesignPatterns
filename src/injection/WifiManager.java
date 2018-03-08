@@ -7,8 +7,8 @@ public class WifiManager {
 
     static final String codeSuff = "-RoboFireAlarmNetwork-STATUS-ALERT#";
 
-    public String getConnectionInfo(){
-        return UUID.randomUUID().toString()+codeSuff+UUID.randomUUID().toString();
+    public String getConnectionInfo() {
+        return UUID.randomUUID().toString() + codeSuff + UUID.randomUUID().toString();
     }
 
     public boolean isClearpassWorking() {

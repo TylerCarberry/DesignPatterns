@@ -2,9 +2,9 @@ package injection;
 
 public class FacebookApi {
 
-    NetworkManager networkManager;
-    ImageResizer imageResizer;
-    UserSettings userSettings;
+    private NetworkManager networkManager;
+    private ImageResizer imageResizer;
+    private UserSettings userSettings;
 
     public FacebookApi(NetworkManager networkManager, ImageResizer imageResizer, UserSettings userSettings) {
         this.networkManager = networkManager;
@@ -18,9 +18,8 @@ public class FacebookApi {
         if (userSettings.getLanguage().equalsIgnoreCase("English")) {
             System.out.println(message);
         } else {
-            System.out.println("language is = " +userSettings.getLanguage());
+            System.out.println("language is = " + userSettings.getLanguage());
             System.out.println(message);
-
         }
     }
 

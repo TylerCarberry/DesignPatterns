@@ -1,23 +1,25 @@
 package injection;
 
 public class UserSettings {
-private String language = "English" ;//default is english
-  public enum AlarmConfigLevel {
-    NONE,RANDOM,LOW,MEDIUM,HIGH,EXTREME, ROBO
-  }
-  public UserSettings() {
-  }
 
+    private String language = "English";// default is english
 
-  public void setLanguage(String language) {
-    this.language = language;
-  }
+    public enum AlarmConfigLevel {
+        NONE, RANDOM, LOW, MEDIUM, HIGH, EXTREME, ROBO
+    }
 
-  public String getLanguage() {
-    return language;
-  }
+    public UserSettings() {
+    }
 
-  public String configureAlarmNotificationLevel(AlarmConfigLevel level){
-      return level.toString();
-  }
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String configureAlarmNotificationLevel(AlarmConfigLevel level) {
+        return level.toString();
+    }
 }

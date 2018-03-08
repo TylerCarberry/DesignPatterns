@@ -2,15 +2,14 @@ package injection;
 
 public class Main {
 
-  public static void main(String[] args) {
-    System.out.println("STARTING PROGRAM");
-    //runs just general test without mockito
-    FacebookApp facebookApp = new FacebookApp();
-    facebookApp.printHello();
-    //runs tests with mockito for facebook api and all component
+    public static void main(String[] args) {
+        // Runs just general test without mockito
+        FacebookApp facebookApp = new FacebookApp();
+        facebookApp.useFacebook();
 
-    new TestsWithMockito();
+        // Runs tests with mockito for facebook api and all components
+        new TestsWithMockito().runTests();
 
-  }
+    }
 
 }

@@ -4,10 +4,15 @@ import dagger.Module;
 import dagger.Provides;
 import injection.*;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+
 import javax.inject.Singleton;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+/**
+ * Provides Mock components for some objects, real objects for others
+ */
 @Module
 public class TestFacebookModule {
 

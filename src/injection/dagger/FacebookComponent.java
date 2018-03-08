@@ -6,7 +6,7 @@ import injection.FacebookApp;
 import javax.inject.Singleton;
 
 @Singleton
-@Component(modules={FacebookModule.class})
+@Component(modules = {FacebookModule.class})
 public interface FacebookComponent {
-  void inject(FacebookApp facebookApp);
+    void inject(FacebookApp facebookApp);
 }
